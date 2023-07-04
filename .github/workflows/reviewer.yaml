@@ -1,20 +1,19 @@
-name: AI Code Review
+name: Code Review
 
 on:
   issue_comment:
-    types: [created]
+    types: [created, edited]
 
 jobs:
-  ai_code_review:
-    # if: contains(github.event.comment.body, 'check')
+  code-review:
     runs-on: ubuntu-latest
+    if: github.event.comment.user.login == 'IbragimovDP' && startsWith(github.event.comment.body, 'chatgpt')
     steps:
-    - name: AI Code Review
-      uses: AleksandrFurmenkovOfficial/ai-code-review@v0.2.2
+    - name: OpenAI ChatGPT Code Review
+      uses: adshao/chatgpt-code-review-action@v0.2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }} # or your token with access to PRs, read for files and write for comments
-        openai_api_key: ${{ secrets.OPENAI_API_KEY }} # You should have access to gpt-4-0613
-        owner: ${{ github.repository_owner }}
-        repo: ${{ github.event.repository.name }}
-        pr_number: ${{ github.event.number }}
-        # file_extensions: ".dart"
+        PROGRAMMING_LANGUAGE: 'JavaScript'
+        OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        FULL_REVIEW_COMMENT: 'chatgpt'
+        REVIEW_COMMENT_PREFIX: 'chatgpt:'
