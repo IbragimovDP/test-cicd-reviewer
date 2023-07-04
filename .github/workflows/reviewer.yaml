@@ -6,7 +6,7 @@ on:
 
 jobs:
   ai_code_review:
-    if: contains(github.event.comment.body, 'check')
+    # if: contains(github.event.comment.body, 'check')
     runs-on: ubuntu-latest
     steps:
     - name: AI Code Review
@@ -17,4 +17,4 @@ jobs:
         owner: ${{ github.repository_owner }}
         repo: ${{ github.event.repository.name }}
         pr_number: ${{ github.event.number }}
-        file_extensions: ".dart"
+        # file_extensions: ".dart"
