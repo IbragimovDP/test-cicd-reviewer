@@ -13,6 +13,6 @@ jobs:
       uses: adshao/chatgpt-code-review-action@v0.2.5
       with:
         OPENAI_TOKEN: ${{ secrets.openai_api_key }}
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FULL_REVIEW_COMMENT: 'chatgpt'
         REVIEW_COMMENT_PREFIX: 'chatgpt:'
