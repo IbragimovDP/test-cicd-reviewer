@@ -19,4 +19,4 @@ jobs:
         api-key: ${{ secrets.OPENAI_API_KEY }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
         review-focus: 'performance' #oneOf: syntax, performance, security
-        model: 'gpt-3.5-turbo'
+        model: 'gpt-4' #gpt-4, gpt-3.5-turbo
