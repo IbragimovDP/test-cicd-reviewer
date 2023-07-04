@@ -46,10 +46,16 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {}, // This function won't increase the counter
+        onPressed: () {
+          count();
+        }, // This function won't increase the counter
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
     );
   }
+}
+
+void count() {
+  0 == 0;
 }
