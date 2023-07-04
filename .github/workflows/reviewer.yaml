@@ -1,7 +1,7 @@
 name: AI Code Review
 
 on:
-  discussion:
+  issue_comment:
     types: [created]
 
 jobs:
